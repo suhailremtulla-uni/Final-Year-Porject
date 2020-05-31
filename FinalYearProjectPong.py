@@ -44,6 +44,7 @@ green = pygame.Color(0,200,0)
 light_green = pygame.Color(0,255,0)
 red = pygame.Color(200,0,0)
 light_red = pygame.Color(255,0,0)
+yellow = pygame.Color(255,255,0)
 
 puck_speed = 6
 
@@ -472,8 +473,8 @@ def easy_ai_lvl2(): #main loop for non smart ai game (Option 2)
         pygame.draw.rect(window, light_blue, paddle1)#drawing paddle 1
         pygame.draw.rect(window, light_blue, paddle_opponent)#drawing paddle 2
         pygame.draw.aaline(window, grey, (WINDOW_WIDTH/2,0), (WINDOW_WIDTH/2, WINDOW_WIDTH))#seperates two sides
-        pygame.draw.rect(window, red, obsticle)
-        pygame.draw.rect(window, red, obsticle2)
+        pygame.draw.rect(window, yellow, obsticle)
+        pygame.draw.rect(window, yellow, obsticle2)
 
         
         #centre line
@@ -539,8 +540,8 @@ def two_player_lvl2():
         pygame.draw.ellipse(window, white, puck)#drawing the puck
         pygame.draw.rect(window, light_blue, paddle1)#drawing paddle 1
         pygame.draw.rect(window, light_blue, paddle_opponent)#drawing paddle 2
-        pygame.draw.rect(window, red, obsticle)
-        pygame.draw.rect(window, red, obsticle2)
+        pygame.draw.rect(window, yellow, obsticle)
+        pygame.draw.rect(window, yellow, obsticle2)
         
         pygame.draw.aaline(window, grey, (WINDOW_WIDTH/2,0), (WINDOW_WIDTH/2, WINDOW_WIDTH))#seperates two sides
 

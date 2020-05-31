@@ -35,6 +35,8 @@ import FinalYearProjectPongAI as RL
 pygame.init()#initialises all pygame modules
 clock = pygame.time.Clock()
 FPS = 60
+
+#colours
 light_blue = pygame.Color(0,255,255)
 white = pygame.Color("white")
 grey = pygame.Color(49,51,53)
@@ -51,10 +53,12 @@ paddle1_speed = 0
 paddle2_speed = 0
 paddle_opponent_speed = 7
 
+#set scores to 0
 score1 = 0
 score2 = 0
 max_score = 2
 
+#pause is false when game starts
 pause = False
 
 bounceSound = pygame.mixer.Sound("bounce.wav")#imports sound effect when the puck boucnes
@@ -125,7 +129,8 @@ def paddle2_animation():
         paddle_opponent.bottom = WINDOW_HEIGHT
 
 def paddle_opponent_animation():#non smart ai
-    #tracks the puck and moves the paddle according to the puck: - the faster the speed of the ai's paddle determines the difficulty 
+    #tracks the puck and moves the paddle according to the puck: - the faster the speed of the ai's paddle determines the difficulty
+    #if the puck is going up the paddle will go up, if the puck is going down then the paddle goes down
     if paddle_opponent.top < puck.y: # if the top of the ai's paddle is below the puck then:
         paddle_opponent.top = paddle_opponent.top + paddle_opponent_speed # move down
     if paddle_opponent.bottom > puck.y:# if the bottom of the ai's paddle is below the puck then:
@@ -138,7 +143,7 @@ def paddle_opponent_animation():#non smart ai
         paddle_opponent.bottom = WINDOW_HEIGHT
 
 def puck_restart():
-    global puck_x_speed, puck_y_speed
+    global puck_x_speed, puck_y_speed #using global variables within the function, removes global variable error message
     puck.center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2)#restart back in the center
     puck_y_speed *= random.choice((1, -1))#restarts the puck going in a random direction
     puck_x_speed *= random.choice((1, -1))#restarts the puck going in a random direction
@@ -203,7 +208,7 @@ def reset():#resets all variables - used for when game is needed to be restarted
 def gameover():#Game over screen
     gameover = True
     
-    while gameover:
+    while gameover:#while gameover is true run the following until it is false
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -211,7 +216,7 @@ def gameover():#Game over screen
 
         #display game over message
         text_font = pygame.font.Font( None, 70)
-        intro_str = "GAME OVER"
+        intro_str = "GAME OVER"#game over messsage
         intro_render = text_font.render(intro_str, 1, pygame.Color(255, 0, 0, 0))
         window.blit(intro_render, (WINDOW_WIDTH / 2 - 153, WINDOW_HEIGHT / 2 - 50))
 
@@ -284,7 +289,7 @@ def controls():
         pygame.display.update()
         clock.tick(60)
 
-def hard_ai2():
+def hard_ai2():#calling hard ai python code
     RL.main()
 
 #-------------------------------Objects-------------------------------

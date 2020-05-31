@@ -62,7 +62,7 @@ max_score = 2
 pause = False
 
 bounceSound = pygame.mixer.Sound("bounce.wav")#imports sound effect when the puck boucnes
-
+gameoverimg = pygame.image.load("gameover.png")#imports image from the file for game over screen
 
 WINDOW_HEIGHT = 800#window height
 WINDOW_WIDTH = 900#window width
@@ -214,11 +214,13 @@ def gameover():#Game over screen
                 pygame.quit()
                 quit()
 
-        #display game over message
-        text_font = pygame.font.Font( None, 70)
-        intro_str = "GAME OVER"#game over messsage
-        intro_render = text_font.render(intro_str, 1, pygame.Color(255, 0, 0, 0))
-        window.blit(intro_render, (WINDOW_WIDTH / 2 - 153, WINDOW_HEIGHT / 2 - 50))
+        window.blit(gameoverimg, (WINDOW_WIDTH / 2 - 255, WINDOW_HEIGHT / 2 - 190))
+        
+##        #display game over message
+##        text_font = pygame.font.Font( None, 70)
+##        intro_str = "GAME OVER"#game over messsage
+##        intro_render = text_font.render(intro_str, 1, pygame.Color(255, 0, 0, 0))
+##        window.blit(intro_render, (WINDOW_WIDTH / 2 - 153, WINDOW_HEIGHT / 2 - 50))
 
         #button to take the user back to the intro screen
         button("Main Menu", 380, 750, 150, 50, red, light_red, intro)

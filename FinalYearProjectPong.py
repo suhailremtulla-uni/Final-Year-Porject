@@ -244,6 +244,12 @@ def intro():
         intro_render = text_font.render(intro_str, 1, pygame.Color(255, 255, 255, 255))
         window.blit(intro_render, (WINDOW_WIDTH / 6, WINDOW_HEIGHT / 7))#location of page title
 
+        text_font2 = pygame.font.Font(None, 40)#text font
+        msg_str = "CHOOSE AN OPTION TO START"#page message
+        intro_render2 = text_font2.render(msg_str, 1, pygame.Color(255, 255, 0, 0))#rendering with yellow colour
+        window.blit(intro_render2, (WINDOW_WIDTH / 4, WINDOW_HEIGHT / 2.5))#location of page message
+        
+        
         #all buttons on the intro screen with their dedicated function and characteristics
         button("2 Player", 50, 450, 200, 50, green, light_green, two_player)
         button("2 Player Level 2", 50, 510, 200, 50, green, light_green, two_player_lvl2)

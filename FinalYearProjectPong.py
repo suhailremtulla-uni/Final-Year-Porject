@@ -30,7 +30,6 @@
 
 import pygame, sys
 import random
-import FinalYearProjectPongAI as RL
 
 pygame.init()#initialises all pygame modules
 clock = pygame.time.Clock()
@@ -57,7 +56,7 @@ paddle_opponent_speed = 7
 #set scores to 0
 score1 = 0
 score2 = 0
-max_score = 2
+max_score = 11
 
 #pause is false when game starts
 pause = False
@@ -216,12 +215,6 @@ def gameover():#Game over screen
                 quit()
 
         window.blit(gameoverimg, (WINDOW_WIDTH / 2 - 255, WINDOW_HEIGHT / 2 - 190))
-        
-##        #display game over message
-##        text_font = pygame.font.Font( None, 70)
-##        intro_str = "GAME OVER"#game over messsage
-##        intro_render = text_font.render(intro_str, 1, pygame.Color(255, 0, 0, 0))
-##        window.blit(intro_render, (WINDOW_WIDTH / 2 - 153, WINDOW_HEIGHT / 2 - 50))
 
         #button to take the user back to the intro screen
         button("Main Menu", 380, 750, 150, 50, red, light_red, intro)
@@ -256,7 +249,7 @@ def intro():
         button("2 Player Level 2", 50, 510, 200, 50, green, light_green, two_player_lvl2)
         button("Easy AI Bot", 350, 450, 200, 50, green, light_green, easy_ai)
         button("Easy AI Bot Level 2", 350, 510, 200, 50, green, light_green, easy_ai_lvl2)
-        button("Hard AI Bot", 650, 450, 200, 50, green, light_green, hard_ai2)
+        button("Hard AI Bot", 650, 450, 200, 50, green, light_green, two_player)
         button("Quit", 800, 750, 100, 50, red, light_red, quitgame)
         button("Controls", 0, 750, 120, 50, red, light_red, controls)
         
@@ -297,9 +290,6 @@ def controls():
         
         pygame.display.update()
         clock.tick(60)
-
-def hard_ai2():#calling hard ai python code
-    RL.main()
 
 #-------------------------------Objects-------------------------------
 

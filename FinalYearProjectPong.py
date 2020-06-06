@@ -168,7 +168,7 @@ def paused():
         intro_render = text_font.render(intro_str, 1, pygame.Color(255, 255, 255, 255))
         window.blit(intro_render, (WINDOW_WIDTH / 2.8, WINDOW_HEIGHT / 7))
 
-        button("Return To Main Menu", 317, 500, 250, 50, red, light_red, intro)#button to return to main menu)
+        button("Return To Main Menu", 317, 650, 250, 50, red, light_red, intro)#button to return to main menu)
         button("Quit", 800, 750, 100, 50, red, light_red, quitgame)#button to quit game
         button("Continue", 340, 380, 200, 50, green, light_green, unpause)#button to unpause
 
@@ -350,7 +350,7 @@ def two_player():
         pygame.draw.rect(window, light_blue, paddle1)#drawing paddle 1
         pygame.draw.rect(window, light_blue, paddle_opponent)#drawing paddle 2
         
-        pygame.draw.aaline(window, grey, (WINDOW_WIDTH/2,0), (WINDOW_WIDTH/2, WINDOW_WIDTH))#seperates two sides
+        pygame.draw.aaline(window, grey, (WINDOW_WIDTH/2, 0), (WINDOW_WIDTH/2, WINDOW_WIDTH))#seperates two sides
 
         #centre line
         pygame.draw.rect(window, pygame.Color(255, 255, 255, 255), (WINDOW_WIDTH / 2, 0, 1, WINDOW_HEIGHT))
